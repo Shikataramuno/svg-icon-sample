@@ -10,16 +10,17 @@
 </template>
 
 <script lang="ts">
-import { Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
+@Component
 export default class SampleIconView extends Vue {
   name: string = 'SampleIconView';
   message: string = '';
   clickCount: number = 0;
   iconClicked(): void {
     alert('アイコンがクリックされました！');
-    this.message = 'アイコンが X回 クリックされました！';
     this.clickCount++;
+    this.message = 'アイコンが ' +  this.clickCount + '回 クリックされました！';
   }
   initialize(): void {
     this.clickCount = 0;
