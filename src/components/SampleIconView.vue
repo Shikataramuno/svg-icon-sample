@@ -2,7 +2,7 @@
   <div class="container-filed">
     <h1>Vue + Typescript で 自前のアイコンを操作してみる</h1>
     <div class="sample-icon-field">
-      <icon-base class="mic_enable" icon-color="#0000ff" width=30 height=30 icon-name="mic"><icon-mic @clicked="iconClicked"/></icon-base>
+      <icon-base icon-color="#ff0000" width=30 height=30 icon-name="sample"><icon-sample @clicked="iconClicked"/></icon-base>
       <p>{{message}}</p>
     </div>
   </div>
@@ -11,12 +11,12 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import IconBase from './IconBase.vue';
-import IconMic from './icons/IconMic.vue';
+import IconSample from './icons/IconSample.vue';
 
 @Component({
   components: {
     IconBase,
-    IconMic,
+    IconSample,
   },
 })
 export default class SampleIconView extends Vue {

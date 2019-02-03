@@ -18,19 +18,11 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class IconBase extends Vue {
-
   // name: string = 'IconBase';
   @Prop({default: 'box'}) iconName!: string;
   @Prop({default: 18}) width!: number | string;
   @Prop({default: 18}) height!: number | string;
   @Prop({default: 'currentColor'}) iconColor!: string;
-
-  created(): void {
-    console.log('iconName : ' + this.iconName);
-    console.log('width : ' + this.width);
-    console.log('height : ' + this.height);
-    console.log('iconColor : ' + this.iconColor);
-  }
 }
 </script>
 
