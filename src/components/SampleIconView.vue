@@ -1,10 +1,7 @@
 <template>
-  <div class="container-filed">
-    <h1>Vue + Typescript で 自前のアイコンを操作してみる</h1>
-    <div class="sample-icon-field">
-      <icon-base icon-color="#ff0000" width=30 height=30 icon-name="sample"><icon-sample @clicked="iconClicked"/></icon-base>
-      <p>{{message}}</p>
-    </div>
+  <div class="sample-icon-field">
+    <icon-base icon-color="#ff0000" width=30 height=30 icon-name="sample"><icon-sample @clicked="iconClicked"/></icon-base>
+    <div class="message">{{message}}</div>
   </div>
 </template>
 
@@ -21,20 +18,15 @@ import IconSample from './icons/IconSample.vue';
 })
 export default class SampleIconView extends Vue {
   name: string = 'SampleIconView';
-  message: string = '';
+  message: string = ' ↑ クリック^2 ！';
   clickCount: number = 0;
   iconClicked(): void {
     alert('アイコンがクリックされました！');
     this.clickCount++;
     this.message = 'アイコンが ' +  this.clickCount + '回 クリックされました！';
   }
-  initialize(): void {
-    this.clickCount = 0;
-    this.message = '初期化されました';
-  }
   created(): void {
     console.log('SampleIconView.created');
-    this.initialize();
   }
 }
 </script>
@@ -43,5 +35,8 @@ export default class SampleIconView extends Vue {
 .sample-icon-field {
   padding: 5px;
   width: 100%;
+}
+.message {
+  line-height: 30px;
 }
 </style>

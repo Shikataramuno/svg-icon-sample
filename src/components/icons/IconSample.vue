@@ -37,11 +37,10 @@
 import { Component, Emit, Vue } from 'vue-property-decorator';
 
 @Component
-export default class IconMic extends Vue {
-  // name: string = 'IconMic';
+export default class IconSample extends Vue {
   @Emit('clicked')
   clicked(): void {
-    console.log('icon-mic clicked');
+    console.log('icon-sample clicked');
   }
 }
 </script>
